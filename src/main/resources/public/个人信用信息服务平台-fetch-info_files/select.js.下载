@@ -1,0 +1,134 @@
+
+ $(document).ready(function(){
+							///////////////////////////////////input_focus
+		$("input[type='text'], input[type='password'], textarea").focus(function()
+		{$(this).addClass("border_grey")}).blur(function(){$(this).removeClass("border_grey")});
+							
+		/*===========================弹出框1=====================*/
+		
+		$("#tanchu").click(function(){
+						   $("#all").show(0).css('opacity','0.5');
+						   $(".rz_popup").show(0).animate({width: '380px',height: '220px'}, '300');
+						   });
+		$(".close").click(function(){
+						   $("#all").hide(0);
+						   $(".rz_popup").hide(100).animate({width: '0',height: '0'}, '100');
+						   });
+		$(".cancel").click(function(){
+						   $("#all").hide(0);
+						   $(".rz_popup").hide(100).animate({width: '0',height: '0'}, '100');
+						   });
+		/////////////////////////////////////popup_regist
+		$(".regist_btn2").click(function(){
+						   $("#all").show(0).css('opacity','0.5');
+						   $(".regist_popup").show(0).animate({width: '568px',height: '254px'}, '100');
+						   });
+		$(".okay").click(function(){
+						   $("#all").hide(0);
+						   $(".regist_popup").hide(300).animate({width: '0',height: '0'}, '100');
+						   });
+
+		/*===========================弹出框2=====================*/
+		
+		$("#tanchu1").click(function(){
+						   $("#all").show(0).css('opacity','0.5');
+						   $(".rz_popup1").show(0).animate({width: '380px',height: '494px'}, '300');
+						   });
+		$(".close").click(function(){
+						   $("#all").hide(0);
+						   $(".rz_popup1").hide(100).animate({width: '0',height: '0'}, '300');
+						   });
+		/////////////////////////////////////popup_regist
+		$(".regist_btn2").click(function(){
+						   $("#all").show(0).css('opacity','0.5');
+						   $(".regist_popup").show(0).animate({width: '568px',height: '254px'}, '300');
+						   });
+		$(".okay").click(function(){
+						   $("#all").hide(0);
+						   $(".regist_popup").hide(300).animate({width: '0',height: '0'}, '300');
+						   });
+		
+		/*==================================================*/
+
+		
+		
+/*=========================下拉框============================*/
+	$(".open_select_box").click(function(event){	
+    event.stopPropagation();
+    $(".select_list").slideDown(0)
+	});
+	
+	//离开选择区域后，展开的下拉列表关闭
+	$(document).click(function(event){
+		var eo=$(event.target);
+	if($(".open_select").is(":visible") && eo.attr("class")!="select_list" && !eo.parent(".select_list").length)
+	$('.select_list').slideUp(0);
+	});
+	$(".title_0").click(function(){	
+	$('.select_list').slideUp(0);
+	});
+	
+	/*获取选中的值*/
+	var $dss=$(".select_list li");
+	$dss.click(function(){	
+			var $c_attr=$(this).siblings().attr("class");//
+			var $txt=$(this).text();//展开菜单中的列表文本值
+			var $hidden_txt=$(".hidden_txt");
+			var $t1=$(".open_select");//模拟文本框，接受选择的值
+			$t1.text($txt);	
+			$hidden_txt.val($txt);
+			$(this).parents(".select_list").hide();			
+		});
+	//下拉列表滑过的背景
+	$(".select_list li").hover(function(){
+			$(this).addClass("h_bg");
+		},function(){
+			$(this).removeClass("h_bg");		
+	});
+	
+/*==========*/	
+	$(".open_select_box1").click(function(event){	
+    event.stopPropagation();
+    $(".select_list1").slideDown(0)
+	});
+	
+	//离开选择区域后，展开的下拉列表关闭
+	$(document).click(function(event){
+		var eo=$(event.target);
+	if($(".open_select1").is(":visible") && eo.attr("class")!="select_list1" && !eo.parent(".select_list1").length)
+	$('.select_list1').slideUp(0);
+	});
+	$(".title_0").click(function(){	
+	$('.select_list1').slideUp(0);
+	});
+	
+	/*获取选中的值*/
+	var $dss=$(".select_list1 li");
+	$dss.click(function(){	
+			var $c_attr=$(this).siblings().attr("class");//
+			var $txt=$(this).text();//展开菜单中的列表文本值
+			var $hidden_txt=$(".hidden_txt");
+			var $t1=$(".open_select1");//模拟文本框，接受选择的值
+			$t1.text($txt);	
+			$hidden_txt.val($txt);
+			$(this).parents(".select_list1").hide();			
+		});
+	//下拉列表滑过的背景
+	$(".select_list li").hover(function(){
+			$(this).addClass("h_bg");
+		},function(){
+			$(this).removeClass("h_bg");		
+	});
+	
+	
+});
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 

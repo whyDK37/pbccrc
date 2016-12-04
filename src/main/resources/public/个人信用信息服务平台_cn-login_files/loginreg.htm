@@ -27,7 +27,17 @@
     <SCRIPT src="https://ipcrs.pbccrc.org.cn/js/skb_1.js" type="text/javascript"></SCRIPT>
 
     <SCRIPT src="https://ipcrs.pbccrc.org.cn/page/login/js/loginreg.js" type="text/javascript"></SCRIPT>
+    <SCRIPT language="JavaScript">
+        function changeImgrc(){
+            randomRange = 10;
+            var randIndex = Math.floor(Math.random()*randomRange);
+            document.getElementById("imgrc").src = 'code/'+randIndex+'.png';
+        }
 
+        $(document).ready(function(){
+            changeImgrc();
+        });
+    </SCRIPT>
     <STYLE>
         .skb1 {
             z-index: 2000;
@@ -61,7 +71,7 @@
 
     <META name="GENERATOR" content="MSHTML 11.00.10570.1001">
 </HEAD>
-<BODY><!--页面主体-->
+<BODY ><!--页面主体-->
 <DIV class="now">&nbsp;&nbsp;<SPAN>当前位置：</SPAN><A href="https://ipcrs.pbccrc.org.cn/"
                                                   target="_parent">首页</A><SPAN> &gt; 用户登录</SPAN></DIV>
 <DIV id="content">
@@ -70,7 +80,7 @@
             <DIV style="height: 36px; color: rgb(32, 32, 32); line-height: 36px; border-bottom-color: rgb(193, 16, 0); border-bottom-width: 1px; border-bottom-style: solid;"><SPAN
                     style="font-size: 16px; font-weight: bold; float: left;">用户登录</SPAN>
             </DIV>
-            <FORM name="loginForm" onsubmit="if(check(this)){window.location.href='welcome.html'}" method="post"><INPUT
+            <FORM name="loginForm" onsubmit="if(check(this)){window.parent.window.location.href='../welcome.html'}" action="javascript:;" method="get"><INPUT
                     name="org.apache.struts.taglib.html.TOKEN" type="hidden" value="e5101caf2e8bb40817584641fdb3f874">
                 <INPUT name="method" type="hidden" value="login">
                 <INPUT name="date" type="hidden" value="1479476319928">
@@ -113,7 +123,7 @@
                                 onfocus="if(document.getElementById('_@MSG@_')!=null)document.getElementById('_@MSG@_').innerHTML='';"
                                 type="text" maxlength="6">
                         <IMG class="yzm_img" style="width: 115px;height: 27px" id="imgrc" src="code/0.png">
-                        <A class="yzm_a" onclick="" href="#">看不清，换一个</A>
+                        <A class="yzm_a" onclick="changeImgrc()" href="#">看不清，换一个</A>
                         <SCRIPT>document.getElementById('imgrc').style.display = '';</SCRIPT>
                         <SPAN class="span-grey" id="imageCodeInfo" style="width: 110px;"></SPAN>
                     </DIV>

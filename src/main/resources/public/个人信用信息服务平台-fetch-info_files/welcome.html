@@ -1,0 +1,232 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0062)https://ipcrs.pbccrc.org.cn/reportAction.do?method=queryReport -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=GBK"><script type="text/javascript">var _BASEPATH_='https://ipcrs.pbccrc.org.cn/';</script>
+<script src="./pe.js.下载" type="text/javascript"></script>
+
+
+
+<title>中征信个人信用信息服务平台-获取信用信息</title>
+<link type="text/css" href="./public.css" rel="stylesheet">
+<link type="text/css" href="./page.css" rel="stylesheet">
+<script src="./jquery.js.下载" type="text/javascript"></script>
+<script src="./select.js.下载" type="text/javascript"></script>
+<script src="./input_notice.js.下载" type="text/javascript"></script>
+<script type="text/JavaScript">
+function checkCode(code,reportformat){
+var returnvalu;
+$.ajax({
+  	cache:false,
+    type:"post",
+    async: false,
+	url:"reportAction.do",
+	data:{method:"checkTradeCode",code:code,reportformat:reportformat},
+	dataType:"text",
+	success:function(result){
+		if(result == 0){
+			$("#codeinfo").text(""); 
+			$("#codeinfo").removeClass("no").addClass("yes");
+			returnvalu= true;
+		}else if(result == 1){
+			$("#codeinfo").text("身份验证码不正确");
+			$("#codeinfo").removeClass("yes").addClass("no"); 
+			returnvalu= false;
+		}
+	}
+ 	});
+ 	return returnvalu;
+}
+
+function clickHandler() {
+	cleanMsg();
+	var radios = document.getElementsByName('reportformat'), radvalue;
+	for ( var i = 0; i < radios.length; i++) {
+		var rad = radios[i];
+		if (rad.checked) {
+			radvalue = rad.value;
+			break;
+		}
+	}
+	
+	if (!checkRadios()) {
+		$("#messages").text("请选择一版信息。");
+		return;
+	}
+	if ($('#tradeCode').val() == '') {
+		$("#codeinfo").text("请输入身份验证码。");
+		$("#codeinfo").removeClass("yes").addClass("no"); 
+		return;
+	}else  {
+	}
+	var format = $('input:radio[name=reportformat]:checked').val();
+	if(checkCode($('#tradeCode').val(),format)==true){
+		if (radvalue == '25') {
+			form3.action = 'reportAction.do?method=viewReport';
+		} else if (radvalue == '24') {
+			form3.action = 'summaryReport.do?method=viewReport';
+		} else if (radvalue == '21') {
+			form3.action = 'simpleReport.do?method=viewReport';
+		} else if (radvalue == 'd') {
+			window.open('search_4_2.html');
+		}
+		form3.submit();
+	}else{
+		$("#codeinfo").text("身份验证码不正确。");
+		$("#codeinfo").removeClass("yes").addClass("no"); 
+		return;
+	}
+}
+
+function cleanMsg(){
+	$("#messages").text("");
+}
+
+function checkRadios() {
+    //后台生成的代码
+	var radio = document.getElementsByName("reportformat");
+	var flag = false;
+	if (radio != null) {
+		for ( var i = 0; i < radio.length; i++) {
+			if (radio[i].checked == true) {
+				flag = true;
+			}
+		}
+	}
+	return flag;
+}
+
+function checktel(obj){
+	if($('#tradeCode').val()!=''){
+		$('#codeinfo').html('');
+		$("#codeinfo").removeClass("no").addClass("yes");
+	}else{
+		$('#codeinfo').html('身份验证码不能为空。');
+		$("#codeinfo").removeClass("yes").addClass("no");
+	}
+}
+
+function chkReport() {
+	var values1 = "";
+	$("[name='reportformat']").each(function() {
+		if ($(this).attr("disabled")) {
+			values1 += $(this).val() ;
+		}
+	});
+	if (values1 == '252421') {
+		return 'true';
+	}
+}
+$(function() {
+	if (chkReport() == "true") {
+		$('#nextstep').removeClass('regist_btn').addClass('regist_btn-1').attr('disabled','true');//.hide();
+		$('#tradeCode').attr('disabled','true');
+		
+		
+			$("#messages").text("暂无信息");
+		
+	}
+});
+</script>
+</head>
+
+<body onkeydown="if(event.keyCode==13){return false}" marginwidth="1" marginheight="1">
+<form id="form3" name="form3" method="post" action="https://ipcrs.pbccrc.org.cn/simpleReport.do?method=viewReport" target="_blank">
+  <div class="con_right">
+	<div class="right_now">&nbsp;
+	  <span>当前位置：</span><span>信息服务</span><span> &gt; 获取信用信息</span>
+    </div>
+    <div class="title-2">
+	  <span>获取信用信息</span>
+    </div>
+	<div class="right_con">
+			<div class="erro_div1">
+				<span id="messages">暂无信息</span>
+			</div>
+			<div class="table-con4 padding_top_10">
+				<ul class=" ul_l div_left">
+					<li>
+						<font class="regist_text span-14"><label class="span-red">
+								*
+							</label> 选择信用信息：</font>
+							<span class="notice1 span-grey"> 请输入身份验证码。</span>
+					 <span class="span-grey" id="formatinfo"></span>
+					</li>
+				</ul>
+				<ul class=" ul_r div_left" style="margin-left: 12px; position: relative;">
+					<li>
+						<input class="radio_type" type="radio" name="reportformat" disabled="" value="25" id="radiobutton3">
+						<label class="span-14 span-grey2">
+							个人信用信息提示
+						</label>
+						&nbsp;&nbsp;
+						<font class="span-red span-12"></font>
+						<div class="position_re">
+							<span id="s_notice1_t8" class="s_notice1_t position_top2"><a href="https://ipcrs.pbccrc.org.cn/reportAction.do?method=queryReport#">
+							</a> </span>
+							<div id="s_notice1_con8">
+									一句话的方式提示您在个人征信系统中是否存在最近5年的逾期记录，也可通过发送短信代码申请查询。
+							</div>
+						</div>
+					</li>
+					<li class="padding_t15">
+
+						<input class="radio_type" type="radio" name="reportformat" disabled="" value="24" id="radiobutton2">
+						<label class="span-14 span-grey2">
+							个人信用信息概要
+						</label>
+						&nbsp;&nbsp;
+						<font class="span-red span-12"></font>
+						<div class="position_re">
+							<span id="s_notice1_t5" class="s_notice1_t position_top2"><a href="https://ipcrs.pbccrc.org.cn/reportAction.do?method=queryReport#">
+							</a> </span>
+							<div id="s_notice1_con5">
+									展示您的个人信用状况概要，包括信贷记录、公共记录和查询记录的汇总统计信息。
+							</div>
+						</div>
+					</li>
+					<li class="padding_t15">
+
+						<input class="radio_type" type="radio" name="reportformat" disabled="" value="21" id="radiobutton1">
+						<label class="span-14 span-grey2">
+							个人信用报告
+						</label>
+						&nbsp;&nbsp;
+						<font class="span-red span-12"></font>
+						<div class="position_re">
+							<span id="s_notice1_t6" class="s_notice1_t position_top2"><a href="https://ipcrs.pbccrc.org.cn/reportAction.do?method=queryReport#">
+							</a>
+							</span>
+							<div id="s_notice1_con6">
+									展示您个人信用信息的基本情况，包括信贷记录、部分公共记录和查询记录的明细信息。
+							</div>
+						</div>
+					</li>
+				</ul>
+				<div style="clear: both"></div>
+			</div>
+			<!--table-con4  end-->
+
+
+			<div class="table-con4 padding_top_20">
+				<ul>
+					<li class="padding_top_10">
+						<font class="regist_text span-14"><label class="span-red">
+								*
+							</label> 身份验证码：</font>
+						<input type="text" name="tradeCode" id="tradeCode" maxlength="6" class="login_input yzm_input" onfocus="displayYes(this);cleanMsg()" onblur="displayNo(this);checktel(this)" disabled="disabled">
+							<span class="notice1 span-grey"> 请输入身份验证码。</span>
+					 <span class="span-grey" id="codeinfo"></span></li>
+					<li class="padding_top_30">
+						<font class="regist_text">&nbsp;</font>
+						<input name="" type="button" id="nextstep" class="span-14 span-white regist_btn-1" value="提交" onclick="clickHandler()" disabled="disabled">
+					</li>
+				</ul>
+			</div>
+			<!--table-con4  end-->
+	</div>
+	<!--right_con  end-->
+  </div>
+</form>
+	<!--right end-->
+
+
+</body></html>
