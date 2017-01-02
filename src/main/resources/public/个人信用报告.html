@@ -11,6 +11,30 @@
 	<link rel="icon" type="image/x-icon" href="/blank_24px.ico">
 	<script src="./个人信用报告_files/jquery.js.下载" type="text/javascript"></script>
 
+	<SCRIPT src="http://www.w3school.com.cn/jquery/jquery-1.11.1.min.js" type="text/javascript"></SCRIPT>
+<script language="JavaScript">
+
+Date.prototype.Format = function (fmt) { //author: meizz
+            var o = {
+                "M+": this.getMonth() + 1, //月份
+                "d+": this.getDate(), //日
+                "H+": this.getHours(), //小时
+                "m+": this.getMinutes(), //分
+                "s+": this.getSeconds(), //秒
+                "q+": Math.floor((this.getMonth() + 3) / 3), //季度
+                "S": this.getMilliseconds() //毫秒
+            };
+            if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+            for (var k in o)
+                if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+            return fmt;
+        }
+$(document).ready(function () {
+           
+            $("#reportTime").html(new Date().Format("yyyy-MM-dd HH:mm:ss"));
+           
+        });
+</script>
 </head>
 
 <body bgcolor="white">
@@ -34,13 +58,13 @@
 									</tr>
 									<tr>
 										<td width="377" colspan="2" align="left">
-											<strong class="p">报告编号： 2016122100003478596947 </strong>
+											<strong class="p">报告编号： 2017010400003478596947 </strong>
 										</td>
 										<td width="300" colspan="2" align="left">
-											<strong class="p">查询时间：2016.12.21 10:02:23 </strong>
+											<strong class="p">查询时间：2017.01.08 10:01:23</strong>
 										</td>
 										<td width="300" colspan="2" align="right">
-											<strong class="p">报告时间：2016.12.21 18:52:32 </strong>
+											<strong class="p">报告时间：<span id="reportTime"></span></strong>
 										</td>
 									</tr>
 								</tbody>
@@ -184,13 +208,13 @@
 																						&nbsp;账户数
 																					</td>
 																					<td align="center" class="p">
-																						5
+																						0
 																					</td>
 																					<td align="center" class="p">
 																						0
 																					</td>
 																					<td align="center" class="p">
-																						2
+																						0
 																					</td>
 																				</tr>
 																				<tr>
@@ -198,13 +222,13 @@
 																						&nbsp;&nbsp;&nbsp;未结清/未销户账户数
 																					</td>
 																					<td align="center" class="p">
-																						2
+																						0
 																					</td>
 																					<td align="center" class="p">
 																						0
 																					</td>
 																					<td align="center" class="p">
-																						2
+																						0
 																					</td>
 																				</tr>
 																				<tr>
@@ -282,11 +306,11 @@
 												</span>
 												
 													<li style="list-style-type: decimal; list-style-position: outside">
-														2013年1月10日招商银行发放的贷记卡（人民币账户）。截至2016年11月，信用额度50,000，已使用额度55,470。
+														2013年1月10日招商银行发放的贷记卡（人民币账户）。截至2016年10月已销户。
 													</li>
 												
 													<li style="list-style-type: decimal; list-style-position: outside">
-														2013年1月10日招商银行发放的贷记卡（美元账户）。截至2016年11月,信用额度折合人民币50,000，已使用额度0。
+														2013年1月10日招商银行发放的贷记卡（美元账户）。截至2016年10月已销户。
 													</li>
 												
 													<li style="list-style-type: decimal; list-style-position: outside">
@@ -294,43 +318,16 @@
 													</li>
 												
 													<li style="list-style-type: decimal; list-style-position: outside">
-														2013年12月4日中国建设银行上海市分行发放的贷记卡（人民币账户），截至2016年6月已销户。
+														2013年12月4日中国建设银行上海市分行发放的贷记卡（人民币账户），截至2016年12月已销户。
 													</li>
 												
 													<li style="list-style-type: decimal; list-style-position: outside">
-														2013年12月4日中国建设银行上海市分行发放的贷记卡（美元账户），截至2016年6月已销户。
+														2013年12月4日中国建设银行上海市分行发放的贷记卡（美元账户），截至2016年12月已销户。
 													</li>
 												
 											
-										</ol>
-
-									
-									
-
-									
-										<span class="h1"><strong>其他贷款</strong> </span>
-										<ol class="p olstyle">
-											
-											
-												<span class="spanem"><strong>从未逾期过的账户明细如下：<br>
-												</strong> </span>
-												
-													<li style="list-style-type: decimal; list-style-position: outside">
-														2016年11月22日深圳前海微众银行股份有限公司发放的7,500元（人民币）个人消费贷款，2018年7月22日到期。截至2016年11月，余额7,500。
-													</li>
-												
-													<li style="list-style-type: decimal; list-style-position: outside">
-														2016年5月30日哈尔滨银行龙青支行发放的9,459元（人民币）个人消费贷款，2017年6月1日到期。截至2016年10月，余额6,400。
-													</li>
-												
-											
-										</ol>
-									
-
-									
-								
+										</ol>			
 							
-
 							<br>
 							<table width="980" border="1" align="center" cellpadding="0" cellspacing="0" bordercolor="#e5e1e1">
 								<tbody>
@@ -379,165 +376,7 @@
 								</tbody>
 							</table>
 							
-								
-									
-										<table width="980" border="0" align="center" cellspacing="0" style="margin-top: 12px">
-											<tbody>
-												<tr>
-													<td align="center" colspan="4" valign="middle">
-														 <strong class="p">机构查询记录明细</strong>
-													</td>
-												</tr>
-												<tr>
-													<td colspan="4" class="p">------------------------------------------------------------------------------------------------------------------------------------------------------------------</td>
-												</tr>
-												<tr align="center">
-													<td width="100" class="p">
-														<strong>编号</strong>
-													</td>
-													<td width="200" class="p">
-														<strong>查询日期</strong>
-													</td>
-													<td width="380" class="p">
-														<strong>查询操作员</strong>
-													</td>
-													<td width="300" class="p">
-														<strong>查询原因</strong>
-													</td>
-												</tr>
-												
-													<tr align="center">
-														<td class="p">
-															1
-														</td>
-														<td class="p">
-															2016年11月22日
-														</td>
-														<td class="p">
-															深圳前海微众银行股份有限公司/wzzxc*_*pi_02
-														</td>
-														<td class="p">
-															贷款审批
-														</td>
-													</tr>
-												
-													<tr align="center">
-														<td class="p">
-															2
-														</td>
-														<td class="p">
-															2016年8月8日
-														</td>
-														<td class="p">
-															招商银行/C*BUSE*004
-														</td>
-														<td class="p">
-															贷后管理
-														</td>
-													</tr>
-												
-													<tr align="center">
-														<td class="p">
-															3
-														</td>
-														<td class="p">
-															2016年5月25日
-														</td>
-														<td class="p">
-															哈尔滨银行/*lwj*-yp
-														</td>
-														<td class="p">
-															贷款审批
-														</td>
-													</tr>
-												
-													<tr align="center">
-														<td class="p">
-															4
-														</td>
-														<td class="p">
-															2016年5月22日
-														</td>
-														<td class="p">
-															广发银行/*9999*9999
-														</td>
-														<td class="p">
-															信用卡审批
-														</td>
-													</tr>
-												
-													<tr align="center">
-														<td class="p">
-															5
-														</td>
-														<td class="p">
-															2016年5月22日
-														</td>
-														<td class="p">
-															交通银行太平洋信用卡中心/z_*ulu
-														</td>
-														<td class="p">
-															信用卡审批
-														</td>
-													</tr>
-												
-													<tr align="center">
-														<td class="p">
-															6
-														</td>
-														<td class="p">
-															2016年3月1日
-														</td>
-														<td class="p">
-															中国建设银行/sun*e*bin.zh
-														</td>
-														<td class="p">
-															贷后管理
-														</td>
-													</tr>
-												
-													<tr align="center">
-														<td class="p">
-															7
-														</td>
-														<td class="p">
-															2016年1月25日
-														</td>
-														<td class="p">
-															平安普惠融资担保有限公司/f*deng*r
-														</td>
-														<td class="p">
-															贷款审批
-														</td>
-													</tr>
-												
-													<tr align="center">
-														<td class="p">
-															8
-														</td>
-														<td class="p">
-															2016年1月17日
-														</td>
-														<td class="p">
-															招商银行/CMBU*E*004
-														</td>
-														<td class="p">
-															贷后管理
-														</td>
-													</tr>
-												
-												<tr>
-													<td colspan="4" class="p">------------------------------------------------------------------------------------------------------------------------------------------------------------------</td>
-												</tr>
-											</tbody>
-										</table>
-									
-
-								
-							
-							
-								
-									
+																
 										<table width="980" border="0" align="center" cellspacing="0">
 											<tbody>
 												<tr>

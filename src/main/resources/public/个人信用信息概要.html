@@ -1,23 +1,50 @@
 
 <!-- saved from url=(0062)https://ipcrs.pbccrc.org.cn/summaryReport.do?method=viewReport -->
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=GBK"><script language="JavaScript"> 
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=GBK">
+
+	<SCRIPT src="http://www.w3school.com.cn/jquery/jquery-1.11.1.min.js" type="text/javascript"></SCRIPT>
+	
+<script src="./个人信用信息概要_files/pe.js.下载" type="text/javascript"></script>
+<script language="JavaScript"> 
 self.moveTo(0,0) 
 self.resizeTo(screen.availWidth,screen.availHeight) 
+
+var _BASEPATH_='https://ipcrs.pbccrc.org.cn/';
+
+
+Date.prototype.Format = function (fmt) { //author: meizz
+            var o = {
+                "M+": this.getMonth() + 1, //月份
+                "d+": this.getDate(), //日
+                "H+": this.getHours(), //小时
+                "m+": this.getMinutes(), //分
+                "s+": this.getSeconds(), //秒
+                "q+": Math.floor((this.getMonth() + 3) / 3), //季度
+                "S": this.getMilliseconds() //毫秒
+            };
+            if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+            for (var k in o)
+                if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+            return fmt;
+        }
+
+		$(document).ready(function () {
+           
+            $("#reportTime").html(new Date().Format("yyyy-MM-dd HH:mm:ss"));
+           
+        });
 </script>
 
 
-
-
-
-
-
-
     <link rel="icon" type="image/x-icon" href="/blank_24px.ico">
-<script type="text/javascript">var _BASEPATH_='https://ipcrs.pbccrc.org.cn/';</script>
-<script src="./个人信用信息概要_files/pe.js.下载" type="text/javascript"></script>
+<script type="text/javascript">
+		//function updateTime(){
+		//    alert(new Date().Format("yyyy-MM-dd HH:mm:ss"))
+        //    document.getElementById("reportTime").html(new Date().Format("yyyy-MM-dd HH:mm:ss"));
+		//}
+</script>
 
 <link rel="stylesheet" type="text/css" href="./个人信用信息概要_files/report.css">
-	
 
 	
 
@@ -25,7 +52,7 @@ self.resizeTo(screen.availWidth,screen.availHeight)
 	
 	<title>个人信用信息概要</title>
 </head>
-<body bgcolor="white">
+<body bgcolor="white" onload="">
 	<div class="container">
 	  
 		<table width="620px" border="0" align="center" cellpadding="0" cellspacing="0">
@@ -45,9 +72,9 @@ self.resizeTo(screen.availWidth,screen.availHeight)
             </tr>
          <tr>
            <td width="620" align="left">
-           <strong class="p">报告编号：</strong><span style="font-size:11px">2016122100003478536650</span>
-           <strong class="p">查询时间：</strong><span style="font-size:11px">2016.12.21 10:02:23</span>
-           <strong class="p">报告时间：</strong><span style="font-size:11px">2016.12.21 18:41:29</span>
+           <strong class="p">报告编号：</strong><span style="font-size:11px">2017010400003478536650</span>
+           <strong class="p">查询时间：</strong><span style="font-size:11px">2017.01.08 10:01:23</span>
+           <strong class="p">报告时间：</strong><span id="reportTime" style="font-size:11px"></span>
            </td>
          </tr>
          </tbody>
@@ -62,12 +89,9 @@ self.resizeTo(screen.availWidth,screen.availHeight)
              <td height="15" align="center" bordercolor="#e5e1e1" bgcolor="#f1edec" class="p"><strong>这部分包含您的贷款、贷记卡、准贷记卡及其他信贷记录。</strong></td>
             </tr>
            <tr bordercolor="#ffffff">
-             <td bgcolor="#ffffff" height="90" align="left"><p class="p">
+             <td bgcolor="#ffffff" height="32" align="left"><p class="p">
 			 	
-				您有2笔贷款,其中2笔尚未结清。目前没有逾期，最近5年内没有发生过90天以上逾期。<br>
-				
-				您有5个贷记卡账户，其中2个尚未销户。目前没有逾期，最近5年内没有发生过90天以上逾期。<br>
-				
+				最近5年内没有发生过90天以上逾期。<br>			
 					
 			 </p></td>
             </tr>
@@ -104,7 +128,7 @@ self.resizeTo(screen.availWidth,screen.availHeight)
            <tr bordercolor="#ffffff">
              <td height="32" bgcolor="#ffffff" class="p" align="left">
 			 	
-				2家机构贷后管理查询，3家机构贷款审批查询，2家机构信用卡审批查询。此外，2016年您通过互联网进行了3次查询。(其中通过信用信息服务平台进行了3次查询，通过网银进行了0次查询)<br>
+				2016年您通过互联网进行了3次查询。(其中通过信用信息服务平台进行了3次查询，通过网银进行了0次查询)<br>
 				
 					
 			 </td>
